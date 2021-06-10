@@ -66,7 +66,7 @@ export const guestbookEntryUserDetailTimestamp = css.resolve`
     color: gray;
   }
 `
-export const guestbookEntryStory = css.resolve`
+export const guestbookEntryMessage = css.resolve`
   div {
     flex-shrink: 0;
     flex-basis: 60%;

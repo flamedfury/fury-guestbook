@@ -57,7 +57,7 @@ export const heroFormTextArea = css.resolve`
     border: 1.2px solid rgba(50, 63, 203);
   }
 `
-export const heroFormTwitterInput = css.resolve`
+export const heroFormWebInput = css.resolve`
   input {
     display: inline-block;
     width: 45%;

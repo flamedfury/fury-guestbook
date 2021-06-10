@@ -28,8 +28,8 @@ export const useGuestbookEntries = () => {
       data {
         _id
         _ts
-        twitter_handle
-        story
+        web_handle
+        message
       }
       after
     }
@@ -61,7 +61,7 @@ export const useGuestbookEntries = () => {
 /**
 |--------------------------------------------------
 | This GraphQL mutation creates a new GuestbookEntry
-| with the requisite twitter handle and story arguments.
+| with the requisite web handle and message arguments.
 |
 | It returns the stored data and includes the unique
 | identifier (_id) as well as _ts (time created).
@@ -73,16 +73,16 @@ export const useGuestbookEntries = () => {
 | Learn more about GraphQL mutations: https://graphql.org/learn/queries/#mutations
 |--------------------------------------------------
 */
-export const createGuestbookEntry = async (twitterHandle, story) => {
-  const query = `mutation CreateGuestbookEntry($twitterHandle: String!, $story: String!) {
+export const createGuestbookEntry = async (webHandle, message) => {
+  const query = `mutation CreateGuestbookEntry($webHandle: String!, $message: String!) {
     createGuestbookEntry(data: {
-      twitter_handle: $twitterHandle,
-      story: $story
+      web_handle: $webHandle,
+      message: $message
     }) {
       _id
       _ts
-      twitter_handle
-      story
+      web_handle
+      message
     }
   }`
 
@@ -95,7 +95,7 @@ export const createGuestbookEntry = async (twitterHandle, story) => {
     },
     body: JSON.stringify({
       query,
-      variables: { twitterHandle, story },
+      variables: { webHandle, message },
     }),
   })
   const data = await res.json()

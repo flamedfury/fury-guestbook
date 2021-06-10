@@ -5,7 +5,7 @@ import {
   guestbookEntryUserDetailAvatarImg,
   guestbookEntryUserDetailTimestamp,
   guestbookEntryUserDetailBiolink,
-  guestbookEntryStory,
+  guestbookEntryMessage,
   guestbookEntryShare,
   guestbookEntryShareTwitterButton,
   guestbookEntryShareTwitterButtonLogo1,
@@ -17,60 +17,26 @@ export default function GuestbookEntry(props) {
     <>
       <div className={guestbookEntry.className}>
         <div className={guestbookEntryUserDetail.className}>
-          <div className={guestbookEntryUserDetailAvatar.className}>
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href={`https://twitter.com/${props.twitter_handle}/`}
-            >
-              <img
-                className={guestbookEntryUserDetailAvatarImg.className}
-                src={`https://twitter-avatar.vercel.app/${props.twitter_handle}/`}
-              />
-            </a>
-          </div>
           <a
             className={guestbookEntryUserDetailBiolink.className}
             target="_blank"
             rel="noopener noreferrer"
-            href={`https://twitter.com/${props.twitter_handle}/`}
+            href={`https://github.com/${props.web_handle}/`}
           >
-            {props.twitter_handle}
+            {props.web_handle}
           </a>
           <span className={guestbookEntryUserDetailTimestamp.className}>
             {props.date.toDateString()}
           </span>
         </div>
-        <div className={guestbookEntryStory.className}>{props.story}</div>
-      </div>
-      <div className={guestbookEntryShare.className}>
-        <a
-          href={`http://twitter.com/share?text=${encodeURIComponent(
-            props.story + ' @faunadb @zeithq'
-          )}&url=${encodeURIComponent(
-            'https://fauna.com'
-          )}&hashtags=graphql,nextjs
-                    `}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={guestbookEntryShareTwitterButton.className}
-        >
-          <img
-            src="/static/twitter_icon_black.png"
-            className={guestbookEntryShareTwitterButtonLogo1.className}
-          />
-          <img
-            className={guestbookEntryShareTwitterButtonLogo2.className}
-            src="/static/twitter_icon_blue.png"
-          />
-        </a>
+        <div className={guestbookEntryMessage.className}>{props.message}</div>
       </div>
       {guestbookEntry.styles}
       {guestbookEntryShare.styles}
       {guestbookEntryShareTwitterButton.styles}
       {guestbookEntryShareTwitterButtonLogo1.styles}
       {guestbookEntryShareTwitterButtonLogo2.styles}
-      {guestbookEntryStory.styles}
+      {guestbookEntryMessage.styles}
       {guestbookEntryUserDetail.styles}
       {guestbookEntryUserDetailAvatar.styles}
       {guestbookEntryUserDetailAvatarImg.styles}

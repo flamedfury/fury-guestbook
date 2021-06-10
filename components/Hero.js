@@ -9,7 +9,7 @@ import {
   heroForm,
   heroFormFieldset,
   heroFormTextArea,
-  heroFormTwitterInput,
+  heroFormWebInput,
   heroFormSubmitButton,
   heroEntries,
 } from '../styles/hero'
@@ -21,8 +21,8 @@ function getEntries(data) {
 export default function Hero(props) {
   const { data, errorMessage } = useGuestbookEntries()
   const [entries, setEntries] = useState([])
-  const [twitterHandle, setTwitterHandle] = useState('')
-  const [story, setStory] = useState('')
+  const [webHandle, setWebHandle] = useState('')
+  const [message, setMessage] = useState('')
   const [submitting, setSubmitting] = useState(false)
 
   useEffect(() => {
@@ -33,20 +33,20 @@ export default function Hero(props) {
 
   function handleSubmit(event) {
     event.preventDefault()
-    if (twitterHandle.trim().length === 0) {
-      alert('Please provide a valid twitter handle :)')
+    if (webHandle.trim().length === 0) {
+      alert('please provide your web handle :)')
       return
     }
-    if (story.trim().length === 0) {
-      alert('No favorite memory? This cannot be!')
+    if (message.trim().length === 0) {
+      alert('no favorite memory? this cannot be!')
       return
     }
     setSubmitting(true)
-    createGuestbookEntry(twitterHandle, story)
+    createGuestbookEntry(webHandle, message)
       .then((data) => {
         entries.unshift(data.data.createGuestbookEntry)
-        setTwitterHandle('')
-        setStory('')
+        setWebHandle('')
+        setMessage('')
         setEntries(entries)
         setSubmitting(false)
       })
@@ -57,18 +57,17 @@ export default function Hero(props) {
       })
   }
 
-  function handleStoryChange(event) {
-    setStory(event.target.value)
+  function handleMessageChange(event) {
+    setMessage(event.target.value)
   }
 
-  function handleTwitterChange(event) {
-    setTwitterHandle(event.target.value.replace('@', ''))
+  function handleWebChange(event) {
+    setWebHandle(event.target.value.replace('@', ''))
   }
 
   return (
-    <div className={heroContainer.className}>
-      <div className={hero.className}>
-        <Header />
+    <main>
+        <h1>sign my guestbook</h1>
         <form className={heroForm.className} onSubmit={handleSubmit}>
           <fieldset
             className={heroFormFieldset.className}
@@ -78,17 +77,17 @@ export default function Hero(props) {
               className={heroFormTextArea.className}
               rows="5"
               cols="50"
-              name="story"
-              placeholder="What is your favorite memory as a developer?"
-              onChange={handleStoryChange}
-              value={story}
+              name="message"
+              placeholder="what is your favorite memory of the early web?"
+              onChange={handleMessageChange}
+              value={message}
             />
             <input
-              className={heroFormTwitterInput.className}
+              className={heroFormWebInput.className}
               type="text"
-              placeholder="twitter handle (no '@')"
-              onChange={handleTwitterChange}
-              value={twitterHandle}
+              placeholder="alias"
+              onChange={handleWebChange}
+              value={webHandle}
             />
             <input
               className={heroFormSubmitButton.className}
@@ -97,7 +96,8 @@ export default function Hero(props) {
             />
           </fieldset>
         </form>
-      </div>
+        <hr />
+
       <div className={heroEntries.className}>
         {errorMessage ? (
           <p>{errorMessage}</p>
@@ -109,8 +109,8 @@ export default function Hero(props) {
             return (
               <div key={entry._id}>
                 <GuestbookEntry
-                  twitter_handle={entry.twitter_handle}
-                  story={entry.story}
+                  web_handle={entry.web_handle}
+                  message={entry.message}
                   date={date}
                 />
                 {index < allEntries.length - 1 && <GuestbookEntryDivider />}
@@ -121,12 +121,12 @@ export default function Hero(props) {
       </div>
       {heroEntries.styles}
       {heroFormSubmitButton.styles}
-      {heroFormTwitterInput.styles}
+      {heroFormWebInput.styles}
       {heroFormTextArea.styles}
       {heroFormFieldset.styles}
       {heroForm.styles}
       {heroContainer.styles}
       {hero.styles}
-    </div>
+    </main>
   )
 }

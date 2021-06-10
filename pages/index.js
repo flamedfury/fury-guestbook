@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Header from '../components/Header'
 import Footer from '../components/Footer'
 import Hero from '../components/Hero'
 
@@ -13,27 +14,16 @@ const Guestbook = (props) => {
           type="image/x-icon"
           href="/static/favicon.png"
         />
+        <link
+          rel="stylesheet"
+          href="https://flamedfury.com/css/styles.css"></link>
       </Head>
-      <style jsx global>{`
-        body {
-          margin: 0px;
-          padding: 0px;
-        }
-      `}</style>
-      <div>
+
+
+        <Header />
         <Hero />
         <Footer />
-      </div>
-      <style jsx>{`
-        div {
-          display: flex;
-          margin-left: auto;
-          margin-right: auto;
-          font-family: sans-serif, sans;
-          flex-direction: column;
-          align-items: center;
-        }
-      `}</style>
+
     </>
   )
 }
