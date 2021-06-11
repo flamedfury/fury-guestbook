@@ -45,7 +45,7 @@ export const heroFormTextArea = css.resolve`
     margin-bottom: .5rem;
     color: var(--text);
     background: var(--bg);
-    border: 1px solid var(--border);
+    border: 1.2px solid var(--pink2);
     border-radius: 5px;
     box-shadow: none;
     box-sizing: border-box;
@@ -58,7 +58,7 @@ export const heroFormTextArea = css.resolve`
   textarea:hover,
   textarea:focus {
     outline: none !important;
-    border: 1.2px solid var(--pink2);
+    border: 1.2px solid var(--grey);
   }
 `
 export const heroFormWebInput = css.resolve`
@@ -69,7 +69,7 @@ export const heroFormWebInput = css.resolve`
     margin-bottom: .5rem;
     color: var(--text);
     background: var(--bg);
-    border: 1px solid var(--border);
+    border: 1.2px solid var(--pink2);
     border-radius: 5px;
     box-shadow: none;
     box-sizing: border-box;
@@ -82,7 +82,7 @@ export const heroFormWebInput = css.resolve`
   input:hover,
   input:focus {
     outline: none !important;
-    border: 1.2px solid var(--pink2);
+    border: 1.2px solid var(--grey);
   }
 `
 export const heroFormSiteInput = css.resolve`
@@ -93,7 +93,7 @@ export const heroFormSiteInput = css.resolve`
     margin-bottom: .5rem;
     color: var(--text);
     background: var(--bg);
-    border: 1px solid var(--border);
+    border: 1.2px solid var(--pink2);
     border-radius: 5px;
     box-shadow: none;
     box-sizing: border-box;
@@ -106,7 +106,7 @@ export const heroFormSiteInput = css.resolve`
   input:hover,
   input:focus {
     outline: none !important;
-    border: 1.2px solid var(--pink2);
+    border: 1.2px solid var(--grey);
   }
 `
 export const heroFormSubmitButton = css.resolve`
