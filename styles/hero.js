@@ -39,54 +39,92 @@ export const heroFormFieldset = css.resolve`
 `
 export const heroFormTextArea = css.resolve`
   textarea {
-    display: block;
-    width: 100%;
-    margin-bottom: 20px;
-    resize: none;
-    padding: 5px;
+    font-size: inherit;
+    font-family: inherit;
+    padding: .5rem;
+    margin-bottom: .5rem;
+    color: var(--text);
+    background: var(--bg);
+    border: 1px solid var(--border);
     border-radius: 5px;
-    border: 1.2px solid rgba(50, 63, 203, 0.5);
-    transition: border 200ms ease-in-out;
+    box-shadow: none;
     box-sizing: border-box;
-    font-family: sans-serif;
+    width: 100%;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
   }
 
   textarea:hover,
   textarea:focus {
     outline: none !important;
-    border: 1.2px solid rgba(50, 63, 203);
+    border: 1.2px solid var(--pink2);
   }
 `
 export const heroFormWebInput = css.resolve`
   input {
-    display: inline-block;
-    width: 45%;
-    padding: 5px;
+    font-size: inherit;
+    font-family: inherit;
+    padding: .5rem;
+    margin-bottom: .5rem;
+    color: var(--text);
+    background: var(--bg);
+    border: 1px solid var(--border);
     border-radius: 5px;
-    border: 1.2px solid rgba(50, 63, 203, 0.5);
-    transition: border 200ms ease-in-out;
+    box-shadow: none;
+    box-sizing: border-box;
+    width: 100%;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
   }
 
   input:hover,
   input:focus {
     outline: none !important;
-    border: 1.2px solid rgba(50, 63, 203);
+    border: 1.2px solid var(--pink2);
+  }
+`
+export const heroFormSiteInput = css.resolve`
+  input {
+    font-size: inherit;
+    font-family: inherit;
+    padding: .5rem;
+    margin-bottom: .5rem;
+    color: var(--text);
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    box-shadow: none;
+    box-sizing: border-box;
+    width: 100%;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  input:hover,
+  input:focus {
+    outline: none !important;
+    border: 1.2px solid var(--pink2);
   }
 `
 export const heroFormSubmitButton = css.resolve`
   input {
-    width: 45%;
+    border: none;
     border-radius: 5px;
-    padding: 5px;
-    float: right;
-    background-color: rgba(50, 63, 203);
-    color: white;
-    font-weight: bold;
-    border: 1.2px solid rgba(50, 63, 203, 0.5);
+    background: var(--pink2);
+    font-size: 1rem;
+    color: var(--white);
+    padding: .7rem .9rem;
+    margin: .5rem 0;
+    transition: .4s;
+    width: 100%;
   }
 
   input:hover {
     cursor: pointer;
+    font-weight: bold;
   }
 `
 export const heroEntries = css.resolve`
@@ -100,8 +138,8 @@ export const heroEntries = css.resolve`
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 56%;
-    max-width: 800px;
+    width: 60%;
+    max-width: 900px;
     text-align: center;
   }
 

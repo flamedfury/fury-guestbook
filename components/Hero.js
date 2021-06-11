@@ -10,6 +10,7 @@ import {
   heroFormFieldset,
   heroFormTextArea,
   heroFormWebInput,
+  heroFormSiteInput,
   heroFormSubmitButton,
   heroEntries,
 } from '../styles/hero'
@@ -96,7 +97,7 @@ export default function Hero(props) {
               value={webHandle}
             />
             <input
-              className={heroFormWebInput.className}
+              className={heroFormSiteInput.className}
               type="text"
               placeholder="website address"
               onChange={siteWebChange}
@@ -105,7 +106,7 @@ export default function Hero(props) {
             <input
               className={heroFormSubmitButton.className}
               type="submit"
-              value="Submit"
+              value="submit"
             />
           </fieldset>
         </form>
@@ -133,6 +134,8 @@ export default function Hero(props) {
           })
         )}
       </div>
+      <hr />
+      <p>return <a href="https://flamedfury.com">home</a>!</p>
       {heroEntries.styles}
       {heroFormSubmitButton.styles}
       {heroFormWebInput.styles}
