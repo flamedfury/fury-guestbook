@@ -29,6 +29,7 @@ export const useGuestbookEntries = () => {
         _id
         _ts
         web_handle
+        web_site
         message
       }
       after
@@ -73,15 +74,17 @@ export const useGuestbookEntries = () => {
 | Learn more about GraphQL mutations: https://graphql.org/learn/queries/#mutations
 |--------------------------------------------------
 */
-export const createGuestbookEntry = async (webHandle, message) => {
-  const query = `mutation CreateGuestbookEntry($webHandle: String!, $message: String!) {
+export const createGuestbookEntry = async (webHandle, webSite, message) => {
+  const query = `mutation CreateGuestbookEntry($webHandle: String!, $webSite: String!,$message: String!) {
     createGuestbookEntry(data: {
       web_handle: $webHandle,
+      web_site: $webSite,
       message: $message
     }) {
       _id
       _ts
       web_handle
+      web_site
       message
     }
   }`
@@ -95,7 +98,7 @@ export const createGuestbookEntry = async (webHandle, message) => {
     },
     body: JSON.stringify({
       query,
-      variables: { webHandle, message },
+      variables: { webHandle, webSite, message },
     }),
   })
   const data = await res.json()

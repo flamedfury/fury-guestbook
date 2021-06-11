@@ -1,15 +1,10 @@
 import {
   guestbookEntry,
   guestbookEntryUserDetail,
-  guestbookEntryUserDetailAvatar,
-  guestbookEntryUserDetailAvatarImg,
   guestbookEntryUserDetailTimestamp,
   guestbookEntryUserDetailBiolink,
   guestbookEntryMessage,
   guestbookEntryShare,
-  guestbookEntryShareTwitterButton,
-  guestbookEntryShareTwitterButtonLogo1,
-  guestbookEntryShareTwitterButtonLogo2,
 } from '../styles/guestbookentry'
 
 export default function GuestbookEntry(props) {
@@ -18,10 +13,9 @@ export default function GuestbookEntry(props) {
       <div className={guestbookEntry.className}>
         <div className={guestbookEntryUserDetail.className}>
           <a
-            className={guestbookEntryUserDetailBiolink.className}
             target="_blank"
             rel="noopener noreferrer"
-            href={`https://github.com/${props.web_handle}/`}
+            href={`${props.web_site}/`}
           >
             {props.web_handle}
           </a>
@@ -33,13 +27,8 @@ export default function GuestbookEntry(props) {
       </div>
       {guestbookEntry.styles}
       {guestbookEntryShare.styles}
-      {guestbookEntryShareTwitterButton.styles}
-      {guestbookEntryShareTwitterButtonLogo1.styles}
-      {guestbookEntryShareTwitterButtonLogo2.styles}
       {guestbookEntryMessage.styles}
       {guestbookEntryUserDetail.styles}
-      {guestbookEntryUserDetailAvatar.styles}
-      {guestbookEntryUserDetailAvatarImg.styles}
       {guestbookEntryUserDetailBiolink.styles}
       {guestbookEntryUserDetailTimestamp.styles}
     </>

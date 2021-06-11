@@ -22,6 +22,7 @@ export default function Hero(props) {
   const { data, errorMessage } = useGuestbookEntries()
   const [entries, setEntries] = useState([])
   const [webHandle, setWebHandle] = useState('')
+  const [webSite, setWebSite] = useState('')
   const [message, setMessage] = useState('')
   const [submitting, setSubmitting] = useState(false)
 
@@ -38,14 +39,15 @@ export default function Hero(props) {
       return
     }
     if (message.trim().length === 0) {
-      alert('no favorite memory? this cannot be!')
+      alert('no favorite memory? why are you even here!')
       return
     }
     setSubmitting(true)
-    createGuestbookEntry(webHandle, message)
+    createGuestbookEntry(webHandle, webSite, message)
       .then((data) => {
         entries.unshift(data.data.createGuestbookEntry)
         setWebHandle('')
+        setWebSite('')
         setMessage('')
         setEntries(entries)
         setSubmitting(false)
@@ -62,7 +64,11 @@ export default function Hero(props) {
   }
 
   function handleWebChange(event) {
-    setWebHandle(event.target.value.replace('@', ''))
+    setWebHandle(event.target.value)
+  }
+
+  function siteWebChange(event) {
+    setWebSite(event.target.value)
   }
 
   return (
@@ -85,9 +91,16 @@ export default function Hero(props) {
             <input
               className={heroFormWebInput.className}
               type="text"
-              placeholder="alias"
+              placeholder="web handle"
               onChange={handleWebChange}
               value={webHandle}
+            />
+            <input
+              className={heroFormWebInput.className}
+              type="text"
+              placeholder="website address"
+              onChange={siteWebChange}
+              value={webSite}
             />
             <input
               className={heroFormSubmitButton.className}
@@ -110,6 +123,7 @@ export default function Hero(props) {
               <div key={entry._id}>
                 <GuestbookEntry
                   web_handle={entry.web_handle}
+                  web_site={entry.web_site}
                   message={entry.message}
                   date={date}
                 />

@@ -12,7 +12,7 @@ const Guestbook = (props) => {
         <link
           rel="shortcut icon"
           type="image/x-icon"
-          href="/static/favicon.png"
+          href="/static/favicon.ico"
         />
         <link
           rel="stylesheet"
