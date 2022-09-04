@@ -73,77 +73,89 @@ export default function Hero(props) {
   }
 
   return (
-    <main>
-        <h1>sign my guestbook</h1>
-        <form className={heroForm.className} onSubmit={handleSubmit}>
-          <fieldset
-            className={heroFormFieldset.className}
-            disabled={submitting && 'disabled'}
-          >
-            <textarea
-              className={heroFormTextArea.className}
-              rows="5"
-              cols="50"
-              name="message"
-              placeholder="what is your favorite memory of the early web?"
-              onChange={handleMessageChange}
-              value={message}
-            />
-            <input
-              className={heroFormWebInput.className}
-              type="text"
-              placeholder="web handle"
-              onChange={handleWebChange}
-              value={webHandle}
-            />
-            <input
-              className={heroFormSiteInput.className}
-              type="text"
-              placeholder="website address"
-              onChange={siteWebChange}
-              value={webSite}
-            />
-            <input
-              className={heroFormSubmitButton.className}
-              type="submit"
-              value="submit"
-            />
-          </fieldset>
-        </form>
-        <hr />
-
-      <div className={heroEntries.className}>
-        {errorMessage ? (
-          <p>{errorMessage}</p>
-        ) : !data ? (
-          <p>Loading entries...</p>
-        ) : (
-          entries.map((entry, index, allEntries) => {
-            const date = new Date(entry._ts / 1000)
-            return (
-              <div key={entry._id}>
-                <GuestbookEntry
-                  web_handle={entry.web_handle}
-                  web_site={entry.web_site}
-                  message={entry.message}
-                  date={date}
+    <div class="container">
+      <div class="flex">
+        <main class="main">
+          <article>
+            <h1>sign my guestbook</h1>
+            <form className={heroForm.className} onSubmit={handleSubmit}>
+              <fieldset
+                className={heroFormFieldset.className}
+                disabled={submitting && 'disabled'}
+              >
+                <textarea
+                  className={heroFormTextArea.className}
+                  rows="5"
+                  cols="50"
+                  name="message"
+                  placeholder="what is your favorite memory of the early web?"
+                  onChange={handleMessageChange}
+                  value={message}
                 />
-                {index < allEntries.length - 1 && <GuestbookEntryDivider />}
-              </div>
-            )
-          })
-        )}
+                <input
+                  className={heroFormWebInput.className}
+                  type="text"
+                  placeholder="web handle"
+                  onChange={handleWebChange}
+                  value={webHandle}
+                />
+                <input
+                  className={heroFormSiteInput.className}
+                  type="text"
+                  placeholder="website address"
+                  onChange={siteWebChange}
+                  value={webSite}
+                />
+                <input
+                  className={heroFormSubmitButton.className}
+                  type="submit"
+                  value="submit"
+                />
+              </fieldset>
+            </form>
+            <hr />
+
+            <div className={heroEntries.className}>
+              {errorMessage ? (
+                <p>{errorMessage}</p>
+              ) : !data ? (
+                <p>Loading entries...</p>
+              ) : (
+                entries.map((entry, index, allEntries) => {
+                  const date = new Date(entry._ts / 1000)
+                  return (
+                    <div key={entry._id}>
+                      <GuestbookEntry
+                        web_handle={entry.web_handle}
+                        web_site={entry.web_site}
+                        message={entry.message}
+                        date={date}
+                      />
+                      {index < allEntries.length - 1 && <GuestbookEntryDivider />}
+                    </div>
+                  )
+                })
+              )}
+            </div>
+            <hr />
+            <p>return <a href="https://flamedfury.com">home</a>!</p>
+            {heroEntries.styles}
+            {heroFormSubmitButton.styles}
+            {heroFormWebInput.styles}
+            {heroFormTextArea.styles}
+            {heroFormFieldset.styles}
+            {heroForm.styles}
+            {heroContainer.styles}
+            {hero.styles}
+          </article>
+        </main>
+
+        <footer class="footer">
+          <p><strong>Public Service Announcement 2000</strong></p>
+
+          <p>Copyright © 2000 by fLaMEd. Some rights reserved. Don't jack.</p>
+        </footer>
       </div>
-      <hr />
-      <p>return <a href="https://flamedfury.com">home</a>!</p>
-      {heroEntries.styles}
-      {heroFormSubmitButton.styles}
-      {heroFormWebInput.styles}
-      {heroFormTextArea.styles}
-      {heroFormFieldset.styles}
-      {heroForm.styles}
-      {heroContainer.styles}
-      {hero.styles}
-    </main>
+    </div>
   )
 }

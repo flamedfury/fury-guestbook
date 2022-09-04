@@ -3,12 +3,11 @@ import { header, headerBanner, headerTitle } from '../styles/header'
 export default function Header(props) {
   return (
     <>
-      <header>
+      <header class="header">
         <a href="https://flamedfury.com">
           <img
             src="https://flamedfury.com/img/header.png"
-            height="350px"
-            width="auto"
+            alt="Flamed Fury header image"
           />
         </a>
       </header>

@@ -43,9 +43,9 @@ export const heroFormTextArea = css.resolve`
     font-family: inherit;
     padding: .5rem;
     margin-bottom: .5rem;
-    color: var(--text);
-    background: var(--bg);
-    border: 1.2px solid var(--pink2);
+    color: var(--clr-text);
+    background: var(--clr-bg);
+    border: 1.2px solid var(--clr-primary);
     border-radius: 5px;
     box-shadow: none;
     box-sizing: border-box;
@@ -58,7 +58,7 @@ export const heroFormTextArea = css.resolve`
   textarea:hover,
   textarea:focus {
     outline: none !important;
-    border: 1.2px solid var(--grey);
+    border: 1.2px solid var(--clr-accent);
   }
 `
 export const heroFormWebInput = css.resolve`
@@ -67,9 +67,9 @@ export const heroFormWebInput = css.resolve`
     font-family: inherit;
     padding: .5rem;
     margin-bottom: .5rem;
-    color: var(--text);
-    background: var(--bg);
-    border: 1.2px solid var(--pink2);
+    color: var(--clr-text);
+    background: var(--clr-bg);
+    border: 1.2px solid var(--clr-primary);
     border-radius: 5px;
     box-shadow: none;
     box-sizing: border-box;
@@ -82,7 +82,7 @@ export const heroFormWebInput = css.resolve`
   input:hover,
   input:focus {
     outline: none !important;
-    border: 1.2px solid var(--grey);
+    border: 1.2px solid var(--clr-accent);
   }
 `
 export const heroFormSiteInput = css.resolve`
@@ -91,9 +91,9 @@ export const heroFormSiteInput = css.resolve`
     font-family: inherit;
     padding: .5rem;
     margin-bottom: .5rem;
-    color: var(--text);
-    background: var(--bg);
-    border: 1.2px solid var(--pink2);
+    color: var(--clr-text);
+    background: var(--clr-bg);
+    border: 1.2px solid var(--clr-primary);
     border-radius: 5px;
     box-shadow: none;
     box-sizing: border-box;
@@ -106,16 +106,16 @@ export const heroFormSiteInput = css.resolve`
   input:hover,
   input:focus {
     outline: none !important;
-    border: 1.2px solid var(--grey);
+    border: 1.2px solid var(--clr-accent);
   }
 `
 export const heroFormSubmitButton = css.resolve`
   input {
     border: none;
     border-radius: 5px;
-    background: var(--pink2);
+    background: var(--clr-primary);
     font-size: 1rem;
-    color: var(--white);
+    color: #fff;
     padding: .7rem .9rem;
     margin: .5rem 0;
     transition: .4s;

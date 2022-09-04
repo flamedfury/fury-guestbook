@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import Main from '../components/Hero'
 import Hero from '../components/Hero'
 
 const Guestbook = (props) => {
@@ -9,7 +10,7 @@ const Guestbook = (props) => {
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta charSet="utf-8" />
-        <title>guestbook 📖 :: flamedfury</title>
+        <title>Guestbook 📖 | fLaMEdFury</title>
         <link
           rel="shortcut icon"
           type="image/x-icon"
@@ -21,9 +22,9 @@ const Guestbook = (props) => {
       </Head>
 
 
-        <Header />
-        <Hero />
-        <Footer />
+      <Header />
+      <Hero />
+      {/* <Footer /> */}
 
     </>
   )
